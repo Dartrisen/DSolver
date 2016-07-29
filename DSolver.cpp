@@ -26,8 +26,8 @@ double*					X;
 double*					Y;
 double*					Z;
 static const int 			n = 100;
-void					Solve(double Xo, double Yo, double Zo);
-void					Write();
+void					solve(double Xo, double Yo, double Zo);
+void					write();
 double 					g (double x, double y, double z){return z;}
 double 					f (double x, double y, double z){return cos(3*x)-4*y;}
 };
@@ -46,7 +46,7 @@ DSolver::~DSolver()
 	delete[] Z;
 }
 
-inline void DSolver::Solve(double Xo, double Yo, double Zo)
+inline void DSolver::solve(double Xo, double Yo, double Zo)
 {
 	double k1, k2, k3, k4;
 	double q1, q2, q3, q4;
@@ -85,7 +85,7 @@ for(int i=0; i<n; ++i)
 }
 }
 
-void DSolver::Write()
+void DSolver::write()
 {
 	for (int i = 0; i < n; ++i)
    	{
@@ -96,8 +96,8 @@ void DSolver::Write()
 
 int main(int argc, char const *argv[])
 {
-	DSolver Solver1;
-	Solver1.Solve(0.0,0.8,2.0);
-	Solver1.Write();
+	DSolver solver;
+	solver.solve(0.0,0.8,2.0);
+	solver.write();
 	return 0;
 }
