@@ -120,7 +120,7 @@ int main() {
         for (size_t i = 0; i < num; ++i) {
             double error = std::fabs(y_num[i] - solver.y_analytic(x_num[i]));
             error_sum += error;
-            std::cout << "Error at step " << i << ": " << error << std::endl;
+            std::cout << "Error at step " << i << ": " << error << "\n";
         }
         double avg_error = error_sum / num;
         std::cout << "Average Error: " << avg_error << std::endl;
